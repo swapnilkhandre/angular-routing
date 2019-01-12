@@ -1,0 +1,30 @@
+<form class="form-group row" #loginForm="ngForm" (ngSubmit)="signInCall()" >
+  <fieldset>
+    <legend>Login Form</legend>
+
+    <div class="form-group">
+      <label>Email address</label>
+      <input
+        type="text"
+        class="form-control"
+        aria-describedby="emailHelp"
+        placeholder="User Id"
+        [(ngModel)]="user.userId"
+        id="userid" name="userid" #userid="ngModel"
+        [ngModelOptions]="{updateOn: 'change'}" required
+      />
+      <small id="emailHelp" class="form-text text-muted"
+        >We'll never share your email with anyone else.</small
+      >
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" placeholder="Password"
+      [(ngModel)]="user.password"
+      id="pass" name="pass" #pass="ngModel"
+      [ngModelOptions]="{updateOn: 'change'}" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </fieldset>
+</form>

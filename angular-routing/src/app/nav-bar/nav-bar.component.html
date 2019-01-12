@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <span class="navbar-brand" >DESKERA</span>
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  [routerLink]="['/home']" *ngIf="userService.signInFlag==1">HOME</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link"  [routerLink]="['/sign-in']" *ngIf="userService.signInFlag!=1">SIGN-IN</a>
+      </li>
+      <li class="nav-item active">
+        <button class="nav-link"  (click)="signOut()" *ngIf="userService.signInFlag==1">SIGN-OUT</button>
+      </li>
+    </ul>
+  </div>
+</nav>
